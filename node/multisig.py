@@ -5,7 +5,7 @@ from twisted.internet import reactor
 import obelisk
 import pyelliptic as ec
 import urllib2, re, random
-import pybitcointools
+import bitcoin
 
 
 # Create new private key:
@@ -65,8 +65,8 @@ class Multisig:
 
         print 'pubkeys2', pubkeys
 
-        script = pybitcointools.mk_multisig_script(self.pubkeys, 2, 3)
-        address = pybitcointools.scriptaddr(script)
+        script = bitcoin.mk_multisig_script(self.pubkeys, 2, 3)
+        address = bitcoin.scriptaddr(script)
         print 'script',script
         return address
 
